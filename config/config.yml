@@ -1,0 +1,14 @@
+system:
+  host: "0.0.0.0"
+  port: 3000
+  env: debug
+#  env: release
+
+
+# logger日志
+logger:
+  level: info
+  prefix: '[gin-admin-api]'
+  director: logger
+  showLine: true
+  logInConsole: true
