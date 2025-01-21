@@ -9,6 +9,8 @@ import (
 type config struct {
 	System system
 	Logger logger
+	Mysql  mysql
+	Redis  redis
 }
 
 // 系统配置
@@ -22,9 +24,29 @@ type system struct {
 type logger struct {
 	Level        string
 	Prefix       string
-	director     string
-	showLine     bool
+	Director     string
+	ShowLine     bool
 	LogInConsole bool
+}
+
+// mysql 配置
+type mysql struct {
+	Host     string
+	Port     int
+	Db       string
+	Username string
+	Password string
+	LogLevel string
+	Charset  string
+	MaxIdle  int
+	MaxOpen  int
+}
+
+// redis 配置
+type redis struct {
+	Address  string
+	Password string
+	Db       int
 }
 
 var Config *config

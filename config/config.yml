@@ -12,3 +12,22 @@ logger:
   director: logger
   showLine: true
   logInConsole: true
+
+# mysql配置
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  db: gin-blog
+  username: root
+  password: root1234
+  logLevel: dev
+  charset: utf8
+  maxIdle: 50
+  maxOpen: 150
+
+# redis 配置
+redis:
+  address: 127.0.0.1:6379
+  password: 123456
+  db: 0
+

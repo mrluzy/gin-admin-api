@@ -1,13 +1,21 @@
 package main
 
 import (
-	"fmt"
 	"gin-admin-api/config"
+	"gin-admin-api/core"
+	"gin-admin-api/global"
 )
 
 func main() {
 	// 初始化配置
 	config.InitConfig()
-	fmt.Println("系统配置： ", config.Config.System)
-	fmt.Println("日志配置： ", config.Config.Logger)
+
+	// 初始化日志
+	global.Log = core.InitLogger()
+
+	// 初始化mysql
+	core.InitMysql()
+
+	// 初始化 redis
+	core.InitRedis()
 }
